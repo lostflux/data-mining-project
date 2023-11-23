@@ -1,0 +1,89 @@
+\section{Data Collection}~\label{sec:data-collection}
+As mentioned in the \hyperref[sec:introduction]{introduction},
+we sought to collect data from tech articles and blogs for our study, particularly
+centered around topics that are relevant to \emph{machine learning} and \emph{artificial intelligence}.
+To do this, we built a web scraper~\footcite[The source-code is available on GitHub; see ][]{functional-scraper}
+that would perform a breadth-first crawl of the internet from
+a set of given seed URLs,collecting all the text frompages that contained
+a substantial count of the keywords we were interested in.
+We then compiled the collected data into a dataset of
+$17092$ articles, with a total of $28$ million
+words~\footcite[The dataset is now open-sorce and available on Huggingface; see ][]{ai_dataset_2023}
+
+% data analytics
+\begin{table}[H]
+  \label{tab:data-analytics}
+  \centering
+  \begin{tabular}{l | r | r}
+    \toprule
+    \textbf{Year} & \textbf{No. of articles} & \textbf{No. of Words} \\
+    \midrule
+    $2000$ & $31$ & $170567$ \\
+    % \midrule
+    $2001$ & $8$ & $43041$ \\
+    % \midrule
+    $2002$ & $15$ & $42792$ \\
+    % \midrule
+    $2003$ & $1$ & $744$ \\
+    % \midrule
+    $2004$ & $9$ & $54832$ \\
+    \midrule
+    $2005$ & $5$ & $19673$ \\
+    % \midrule
+    $2006$ & $14$ & $33312$ \\
+    % \midrule
+    $2007$ & $26$ & $39007$ \\
+    % \midrule
+    $2008$ & $17$ & $69895$ \\
+    % \midrule
+    $2009$ & $20$ & $75074$ \\
+    \midrule
+    $2010$ & $31$ & $52068$ \\
+    % \midrule
+    $2011$ & $52$ & $122433$ \\
+    % \midrule
+    $2012$ & $141$ & $294872$ \\
+    % \midrule
+    $2013$ & $124$ & $253252$ \\
+    % \midrule
+    $2014$ & $588$ & $621163$ \\
+    \midrule
+    $2015$ & $743$ & $1005004$ \\
+    % \midrule
+    $2016$ & $777$ & $1078895$ \\
+    % \midrule
+    $2017$ & $1177$ & $1467028$ \\
+    % \midrule
+    $2018$ & $1339$ & $2055156$ \\
+    % \midrule
+    $2019$ & $1914$ & $2611771$ \\
+    \midrule
+    $2020$ & $1856$ & $3298318$ \\
+    % \midrule
+    $2021$ & $2144$ & $3552252$ \\
+    % \midrule
+    $2022$ & $2313$ & $3841825$ \\
+    % \midrule
+    $2023$ & $3747$ & $7383298$ \\
+    \midrule
+    \textbf{TOTAL} & $17092$ & $28186272$ \\
+    \toprule
+  \end{tabular}
+  \caption{Count of articles and words per year}
+  \label{tab:count-articles-words}
+\end{table}
+
+In earlier versions of the dataset, we realized that a substantial number of data collected
+was, in fact, blurbs for research articles. This was understandable, since we had not
+restricted our scraper to only look at web domains that are news outlets,
+and many news outlets will link to citation blurbs for relevant research articles.
+To mitigate this issue, we decided to explicitly limit our scraper to web domains
+that are news outlets, such as
+\href{https://www.wired.com}{Wired},
+\href{https://www.theverge.com}{The Verge}, and
+\href{https://www.technologyreview.com}{MIT Technology Review}.
+We only included a few domains for research companies that are prominent drivers
+of the conversatiosn around AI, such as
+\href{https://deepmind.google}{Google DeepMind},
+\href{https://openai.com}{OpenAI},
+and \href{https://txt.cohere.com}{Cohere}.
