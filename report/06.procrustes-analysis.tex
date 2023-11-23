@@ -1,17 +1,26 @@
 \section{Procrustes Analysis}~\label{sec:procrustes}
 Beyond just studying how individual sentiments have changed over time,
 we also sought to study how the \emph{overall} conversation shifts.
-To do this, we used \emph{Procrustes analysis} to compare the
+To do this, we used \emph{procrustes analysis} to compare the
 word embeddings of conversatiosn across different years.
 
-Societal shifts in attitudes toward AI can be both sudden and gradual.
-We did two types of studies, targeted for each type of shift.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/procrustes/heatmap.png}
+  \caption{Procrustes Comparison By Years.}
+  \label{fig:procrustes-heatmap}
+\end{figure}
+
+Although some standout shifts are visible, the above plot is too dense to be useful.
+Thus, we narrow down the study to consecutive years, as shown in~\cref{fig:procrustes-consecutive},
+and to years relative to $2022$, as shown in~\cref{fig:procrustes-2022}.
+We thought these two studies would be useful to identify both gradual shifts
+and shifts relative to the introduction of large language models (LLMs)
+in $2020$.
 
 \subsection{Procrustes Analysis of Consecutive Years}~\label{subsec:procrustes-consecutive}
-To identify sudden shifts in attitudes toward AI, we did procrustes comparisons
-of consecutive years from $2000$ to $2023$.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{figures/procrustes/procrustes-consecutive.png}
   \caption{Procrustes analysis of consecutive years.}
@@ -52,7 +61,7 @@ impacts in how people do their work and interact with technology,
 especially with the commercialization of chatbots such as
 ChatGPT~\cite{chatgpt-info}.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{figures/procrustes/procrustes-2022.png}
   \caption{Procrustes analysis of all years relative to $2022$.}
@@ -66,7 +75,7 @@ To understand the reasons for these disparities, we looked at the most-relevant 
 for each of these years, as shown in~\cref{fig:procrustes-topics}.
 
 \newpage
-\begin{figure}[h!]
+\begin{figure}[H]
   % four plots for 2009, 2021, 2022, and 2023
   \centering
   \begin{subfigure}[b]{0.45\textwidth}

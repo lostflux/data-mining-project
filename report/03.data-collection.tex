@@ -4,11 +4,11 @@ we sought to collect data from tech articles and blogs for our study, particular
 centered around topics that are relevant to \emph{machine learning} and \emph{artificial intelligence}.
 To do this, we built a web scraper~\footcite[The source-code is available on GitHub; see ][]{functional-scraper}
 that would perform a breadth-first crawl of the internet from
-a set of given seed URLs,collecting all the text frompages that contained
+a set of given seed URLs,collecting all the text from pages that contained
 a substantial count of the keywords we were interested in.
 We then compiled the collected data into a dataset of
 $17092$ articles, with a total of $28$ million
-words~\footcite[The dataset is now open-sorce and available on Huggingface; see ][]{ai_dataset_2023}
+words~\footcite[The dataset is available on Huggingface; see ][]{ai_dataset_2023}
 
 % data analytics
 \begin{table}[H]
@@ -73,16 +73,16 @@ words~\footcite[The dataset is now open-sorce and available on Huggingface; see 
   \label{tab:count-articles-words}
 \end{table}
 
-In earlier versions of the dataset, we realized that a substantial number of data collected
+In earlier versions of the dataset, we realized that a substantial fraction of the data collected
 was, in fact, blurbs for research articles. This was understandable, since we had not
 restricted our scraper to only look at web domains that are news outlets,
-and many news outlets will link to citation blurbs for relevant research articles.
-To mitigate this issue, we decided to explicitly limit our scraper to web domains
+and many news outlets will have citation links to blurbs for relevant research articles.
+To fix this, we decided to explicitly limit our scraper to web domains
 that are news outlets, such as
 \href{https://www.wired.com}{Wired},
 \href{https://www.theverge.com}{The Verge}, and
 \href{https://www.technologyreview.com}{MIT Technology Review}.
-We only included a few domains for research companies that are prominent drivers
+We also included a few domains for research companies that are prominent drivers
 of the conversatiosn around AI, such as
 \href{https://deepmind.google}{Google DeepMind},
 \href{https://openai.com}{OpenAI},

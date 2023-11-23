@@ -161,4 +161,6 @@ cython_debug/
 
 # other ignores
 do-not-push
-.git_
+.git
+submission
+*.zip
